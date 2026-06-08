@@ -1,0 +1,138 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: UTN
+meta:
+  id: wrk_6837b3b53086414f96bc1e60fdc1d29b
+  created: 1777503791146
+  modified: 1780861917070
+  description: ""
+collection:
+  - url: http://localhost:8080/accounts
+    name: GetAll accounts
+    meta:
+      id: req_6dbc1896675841e7b0d8260cfd880aab
+      created: 1780861858736
+      modified: 1780897787572
+      isPrivate: false
+      description: ""
+      sortKey: -1780861858736
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.6.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/accounts
+    name: Create account
+    meta:
+      id: req_9e2a307e3c284db5a424191aee23ea89
+      created: 1780878859464
+      modified: 1780897776904
+      isPrivate: false
+      description: ""
+      sortKey: -1780878859464
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"clientId": 2,
+        	"numeroCuenta": "USD0002",
+        	"moneda": "USD",
+        	"saldo": 500.0,
+        	"activo": "true"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.6.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/accounts
+    name: Put account
+    meta:
+      id: req_4e051f57c43d4899a74c230f4552bbce
+      created: 1780880224615
+      modified: 1780897783345
+      isPrivate: false
+      description: ""
+      sortKey: -1780870359100
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"clientId": 1,
+        	"numeroCuenta": "USD0002",
+        	"moneda": "ARS",
+        	"saldo": 2500.0,
+        	"activo": "true"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.6.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/accounts/1
+    name: Get by ID accounts
+    meta:
+      id: req_82eaa771a7b646d38991cc6c03890820
+      created: 1780897802564
+      modified: 1780897847211
+      isPrivate: false
+      description: ""
+      sortKey: -1780861858686
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.6.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_6a3a47fdb54d5eeea06c4d199fe05a1cdc4fbf35
+    created: 1780861840681
+    modified: 1780861840681
+environments:
+  name: Base Environment
+  meta:
+    id: env_6a3a47fdb54d5eeea06c4d199fe05a1cdc4fbf35
+    created: 1777503791157
+    modified: 1780861840556
+    isPrivate: false
