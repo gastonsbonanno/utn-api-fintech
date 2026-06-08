@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: utn-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: utn_fintech
+      MYSQL_USER: utn_user
+      MYSQL_PASSWORD: utn_password
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./src/main/resources/db:/docker-entrypoint-initdb.d
+    networks:
+      - utn-net
+
+volumes:
+  db_data:
+    name: utn_mysql_data
+
+networks:
+  utn-net:
+    driver: bridge
+
